@@ -1,0 +1,29 @@
+{
+    "uid": "http://github.com/pinf/test-programs-js/JSLintBenchmark/",
+    "boot": "github.com/pinf/test-programs-js/JSLintBenchmark/",
+    "contexts": {
+        "top": {
+            "github.com/pinf/test-programs-js/JSLintBenchmark/": {}
+        }
+    },
+    "packages": {
+        "github.com/pinf/test-programs-js/JSLintBenchmark/": {
+            "locator": {
+                "location": "./"
+            }
+        },
+        "github.com/cadorn/JSLint/":
+        {
+            "locator": {
+                "archive": "https://github.com/cadorn/JSLint/zipball/dbecbf62023bbefa82c3fe88f6c2975a39071066",
+                "resource": true
+            },
+            "descriptor": {
+                "uid": "http://github.com/cadorn/JSLint/",
+                "directories": {
+                    "lib": ""
+                }
+            }
+        }
+    }
+}

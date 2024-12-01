@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module">
+        import antlr4 from "https://cdn.jsdelivr.net/npm/antlr4@4.12.0/dist/antlr4.web.js";
+        import * as ZLexer from "./ZLexer.js";
+        import * as ZParser from "./ZParser.js";
+
+        var inputStream = new antlr4.InputStream("");
+        var lexer = new ZLexer.default(inputStream);
+        var commonTokenStream = new antlr4.CommonTokenStream(lexer);
+        var parser = new ZParser.default(commonTokenStream);
+        debugger;
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

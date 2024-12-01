@@ -1,0 +1,36 @@
+name: "rss-to-issues"
+author: "Johannes Schindelin, Guilhem Lettron"
+description: "Create Issues from RSS/Atom feeds"
+branding:
+  icon: "rss"
+  color: "orange"
+inputs:
+  github-token:
+    description: "The GITHUB_TOKEN secret"
+    required: true
+  feed:
+    description: "URL of the RSS/Atom feed"
+    required: true
+  max-age:
+    description: "Only look at feed items younger than this"
+    required: true
+  prefix:
+    description: "Prefix added to the created issues' titles"
+  labels:
+    description: "Labels to add, comma separated"
+  dry-run:
+    description: "Log issue creation but do nothing"
+  aggregate:
+    description: "Aggregate all items in a single issue"
+  character-limit:
+    description: "Limit the issue contents' size"
+  title-pattern:
+    description: "Limit to feed items whose titles match this regular expression"
+  content-pattern:
+    description: "Limit to feed items whose contents match this regular expression"
+outputs:
+  issues:
+    description: "issue IDs, comma separated"
+runs:
+  using: "node20"
+  main: "dist/index.js"

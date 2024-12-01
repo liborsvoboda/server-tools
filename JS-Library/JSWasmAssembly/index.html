@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/assemblyscript@0.27.27/dist/web.js"></script>
+    <script type="module">
+        import asc from "assemblyscript/asc";
+        debugger;
+        const { error, stdout, stderr, stats } = await asc.main([
+		  // Command line options
+		  "module.ts",
+		  "--enable", " simd",
+		  "--textFile", "module.wat",
+		  "--outFile", "module.wasm",
+		  "--bindings", "raw", "-O3", "--runtime", "stub"
+		//   "--optimize",
+		//   "--sourceMap",
+		//   "--stats"
+		], {
+			// See https://www.assemblyscript.org/compiler.html#transforms for function signatures
+		  // Additional API options
+		  // stdout?: ...,
+		  // stderr?: ...,
+		  readFile: (a) => {
+			console.log(`readFile ${a}`);
+			if (a == "module.ts") {
+				return Promise.resolve(`/** Calculates the n-th Fibonacci number. */
+export function fib(n: i32): i32 {
+  var a = 0, b = 1
+  if (n > 0) {
+    while (--n) {
+      let t = a + b
+      a = b
+      b = t
+    }
+    return b
+  }
+  return a
+}
+export function c(): i8 {
+	return 1 + 2;
+}
+export function a(): v128{
+	return v128.add<i8>(v128(1, 2, 3, 4, 2, 3, 4, 2, 3, 4, 2, 3, 4, 2, 3, 4), v128(5, 6, 7, 8, 6, 7, 8, 6, 7, 8, 6, 7, 8, 6, 7, 8));
+}`);
+			}
+			return Promise.resolve("");
+		  },
+		  writeFile: (a, b, c, d) => {
+			console.log(`writeFile ${a}`);
+			if (a == "module.wat") {
+				debugger;
+			}
+			return Promise.resolve("");
+		  },
+		  listFiles: (a, b, c, d) => {
+			console.log(`listFiles ${a}`);
+			if (a == "module.wat") {
+				debugger;
+			}
+			return Promise.resolve(["module.ts"]);
+		  }
+		  // reportDiagnostic?: ...,
+		  // transforms?: ...
+		});
+		if (error) {
+		  console.log("Compilation failed: " + error.message);
+		  console.log(stderr.toString());
+		} else {
+		  console.log(stdout.toString());
+		}
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+    "uid": "http://github.com/pinf/test-programs-js/URLFetcher/",
+    "main": "main.js",
+    "mappings": {
+        "modules": {
+            "id": "github.com/pinf/modules-js/"
+        }
+    }
+}

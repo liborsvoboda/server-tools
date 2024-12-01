@@ -1,0 +1,77 @@
+{
+    "uid": "http://github.com/pinf/test-programs-js/",
+    "extends": [
+        {
+            "location": "https://raw.github.com/pinf/server-js/v0.1.17/program.packages.json"
+        },
+        {
+            "location": "./HelloWorld/program.json"
+        },
+        {
+            "location": "./AdditionalLoad/program.json"
+        },
+        {
+            "location": "./JSLintBenchmark/program.json"
+        },
+        {
+            "location": "./ModuleSourceFormats/program.json"
+        },
+        {
+            "location": "./CommonJSAPI/program.json"
+        },
+        {
+            "location": "./URLFetcher/program.json"
+        },
+        {
+            "location": "./CanvasGraphics/program.json"
+        }
+    ],
+    "boot": "github.com/pinf/test-programs-js/",
+    "packages": {
+        "github.com/pinf/test-programs-js/": {
+            "locator": {
+                "location": "./"
+            }
+        },
+        "pinf.org/loader/": {
+            "provider": "pinf.org/loader/"
+        },
+        "nodejs.org/": {
+            "provider": "nodejs.org/"
+        },
+        "github.com/pinf/modules-js/": {
+            "locator": {
+                "archive": "https://github.com/pinf/modules-js/zipball/v0.1.13"
+            }
+        },
+        "github.com/kriskowal/q/": {
+            "locator": {
+                "archive": "https://github.com/kriskowal/q/zipball/v0.3.0"
+            },
+            "descriptor": {
+                "uid": "https://github.com/kriskowal/q/",
+                "dependencies": [
+                    {
+                        "id": "github.com/pinf/modules-js/"
+                    }
+                ],
+                "engines": "*"
+            }
+        },
+        "github.com/pinf/test-js/": {
+            "locator": {
+                "archive": "http://github.com/pinf/test-js/zipball/v0.1.3"
+            }
+        },
+        "github.com/pinf/loader-js/": {
+            "locator": {
+                "archive": "http://github.com/pinf/loader-js/zipball/v0.2.21"
+            }
+        },
+        "github.com/pinf/server-js/": {
+            "locator": {
+                "archive": "https://github.com/pinf/server-js/zipball/v0.1.17"
+            }
+        }
+    }
+}

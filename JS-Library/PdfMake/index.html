@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <script>
+    (() => {
+      fetch("./pdfmake.0.2.10.min.js")
+      .then(data => data.text())
+      .then(async jsCode => {
+        eval(jsCode); // pdfmake is declared
+        if (!!pdfmake) {
+          debugger;
+          // https://pdfmake.github.io/docs/0.1/getting-started/client-side/
+          // (<any>pdfMake).vfs = pdfFonts.pdfMake.vfs;
+          pdfmake.pdfMake.vfs = pdfmake.pdfFonts.pdfMake.vfs;
+          process(pdfmake.pdfMake);
+        }
+      })
+      .then(() => {
+        console.log(`pdfmake is released.`)
+      })
+    })()
+    
+
+    function process(pdfMake) {
+      // must use own fonts (files or urls) to avoid dependenting on client-side font. Some OSes may not have some common fonts.
+      pdfMake.fonts = {
+        Times: {
+          normal: 'https://fonts.cdnfonts.com/s/57197/times.woff'
+        }
+      };
+
+      var docDefinition = {
+        content: [
+          'First paragraph',
+          'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'
+        ],
+        defaultStyle: {
+          font: 'Times'
+        }
+      };
+
+      pdfMake.createPdf(docDefinition).download('document.pdf');
+    }
+  </script>
+</body>
+</html>

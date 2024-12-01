@@ -1,0 +1,36 @@
+{
+  "name": "html-autoprefixer",
+  "version": "0.3.8",
+  "description": "Autoprefix all CSS inside an html page - CSS inside style tags and inside style attributes",
+  "main": "lib/main.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "istanbul test _mocha -- --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rebelmail/html-autoprefixer.git"
+  },
+  "keywords": [
+    "autoprefixer",
+    "html",
+    "html-autoprefixer",
+    "auto-prefixer",
+    "css",
+    "postcss"
+  ],
+  "readmeFilename": "README.md",
+  "author": "motdotla",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "istanbul": "^0.4.1",
+    "mocha": "^2.3.4"
+  },
+  "dependencies": {
+    "autoprefixer": "^6.1.1",
+    "html-postcss": "^0.1.2"
+  }
+}

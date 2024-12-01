@@ -1,0 +1,29 @@
+{
+  "name": "package-graph",
+  "version": "1.0.0",
+  "description": "visualize packages used (based on N|Source code)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "package-graph": "index.js"
+  },
+  "keywords": [],
+  "author": "Remy Sharp",
+  "license": "ISC",
+  "dependencies": {
+    "ns-package-graph": "git+https://github.com/pmuellr/ns-package-graph.git",
+    "proxyquire": "^1.7.10",
+    "snyk-resolve-deps": "^1.7.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/remy/package-graph.git"
+  },
+  "bugs": {
+    "url": "https://github.com/remy/package-graph/issues"
+  },
+  "homepage": "https://github.com/remy/package-graph#readme"
+}

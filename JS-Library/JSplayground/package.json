@@ -1,0 +1,43 @@
+{
+  "name": "lodash-playground",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "lint": "./node_modules/.bin/eslint -c .eslintrc.json ./app",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "babel-plugin-transform-regenerator": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "es6-promise": "^4.1.1",
+    "humps": "^2.0.1",
+    "immutable": "^3.8.2",
+    "isomorphic-fetch": "^2.2.1",
+    "jsonwebtoken": "^8.1.0",
+    "jwt-decode": "^2.2.0",
+    "list-to-tree2": "^1.0.1",
+    "lodash": "^4.17.4",
+    "normalizr": "^3.2.4",
+    "promise": "^8.0.1",
+    "tree-util": "^1.0.4",
+    "webpack": "^3.8.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.11.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}

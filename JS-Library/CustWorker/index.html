@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <script>
+        function startTimer() {
+            var w = null;
+            if (typeof (Worker) !== "undefined") {
+                if (w == null) {
+                    w = new Worker("auth-worker.js");
+                }
+                // Update timer div with output from Web Worker
+                w.onmessage = function (event) {
+                    const a = event.data;
+                    // may do some API to decide whether or not to force logout
+                    w.terminate();
+                    w = null;
+                };
+            } else {
+                alert("Your browser does not support this application")
+            }
+        }
+
+        startTimer();
+    </script>
+</body>
+
+</html>
